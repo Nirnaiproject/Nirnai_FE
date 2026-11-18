@@ -202,14 +202,14 @@ export default function LoginPage() {
                   {isAdvocate ? 'Advocate chamber' : 'Client desk'}
                 </span>
                 <h2 className="font-serif text-2xl font-bold leading-tight text-slate-950 sm:text-3xl">
-                  {isAdvocate ? 'Welcome back, counsel.' : 'Welcome back.'}
+                  Welcome to
                   <br />
                   <span className={isAdvocate ? 'text-teal-700' : 'text-amber-700'}>NIRNAI</span>
                 </h2>
                 <p className="mt-2 max-w-xs text-xs font-semibold leading-relaxed text-slate-600 sm:text-sm">
                   {isAdvocate
-                    ? 'Open your chamber, briefs, and consultation calendar.'
-                    : 'Pick up your matter, messages, and booked consultations.'}
+                    ? 'Your professional space to connect with clients and manage your legal practice.'
+                    : 'Your trusted partner in finding the right legal assistance.'}
                 </p>
               </div>
 
@@ -220,9 +220,13 @@ export default function LoginPage() {
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-slate-900">Phone & OTP Login</h4>
+                    <h4 className="text-xs font-bold text-slate-900">
+                      {isAdvocate ? 'Build Your Professional Profile' : 'Find the Right Advocate'}
+                    </h4>
                     <p className="text-[11px] text-slate-600 leading-snug">
-                      Simple, fast sign in with your mobile number and OTP.
+                      {isAdvocate
+                        ? 'Showcase your qualifications, Bar Council enrollment details, experience and areas of practice.'
+                        : 'Discover advocates based on your legal issue, practice area and location.'}
                     </p>
                   </div>
                 </div>
@@ -232,9 +236,13 @@ export default function LoginPage() {
                     <Layers className="w-4 h-4" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-slate-900">Role-Based Access</h4>
+                    <h4 className="text-xs font-bold text-slate-900">
+                      {isAdvocate ? 'Connect with Potential Clients' : 'Explore Legal Guidance'}
+                    </h4>
                     <p className="text-[11px] text-slate-600 leading-snug">
-                      We'll take you straight to your dedicated client or advocate dashboard.
+                      {isAdvocate
+                        ? 'Help clients discover you based on your legal specializations and practice locations.'
+                        : 'Understand legal procedures, your rights and important legal information.'}
                     </p>
                   </div>
                 </div>
@@ -244,9 +252,13 @@ export default function LoginPage() {
                     <ShieldCheck className="w-4 h-4" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-slate-900">Secure & Protected</h4>
+                    <h4 className="text-xs font-bold text-slate-900">
+                      {isAdvocate ? 'Manage Consultation Requests' : 'Manage Consultations'}
+                    </h4>
                     <p className="text-[11px] text-slate-600 leading-snug">
-                      Enterprise-grade legal privilege security with OTP verification support.
+                      {isAdvocate
+                        ? 'View, accept, reject or reschedule consultation requests.'
+                        : 'Request consultations, view appointments and stay updated on your legal interactions.'}
                     </p>
                   </div>
                 </div>
@@ -256,9 +268,13 @@ export default function LoginPage() {
                     <Users className="w-4 h-4" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-slate-900">Built for Everyone</h4>
+                    <h4 className="text-xs font-bold text-slate-900">
+                      {isAdvocate ? 'Manage Your Practice' : 'Your Legal Journey, Organised'}
+                    </h4>
                     <p className="text-[11px] text-slate-600 leading-snug">
-                      Litigants, buyers, tenants, founders & verified advocates on one platform.
+                      {isAdvocate
+                        ? 'Maintain your availability, manage client interactions and keep your professional information updated.'
+                        : 'Keep track of consultation requests, case updates and important documents in one place.'}
                     </p>
                   </div>
                 </div>
@@ -269,7 +285,11 @@ export default function LoginPage() {
             <div className="relative z-10 pt-6 mt-6 border-t border-slate-900/15">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/70 border border-slate-900/10 text-xs font-medium text-slate-700 shadow-sm">
                 <ShieldCheck className={`w-4 h-4 ${isAdvocate ? 'text-teal-700' : 'text-amber-700'}`} />
-                <span>Trusted by <strong>50,000+</strong> users across India</span>
+                <span>
+                  {isAdvocate
+                    ? 'Empowering Advocates Through Digital Legal Services'
+                    : 'Your Partner in Accessing Legal Assistance'}
+                </span>
               </div>
             </div>
           </div>
@@ -343,7 +363,7 @@ export default function LoginPage() {
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
                   <h4 className="text-xl font-bold text-slate-900">
-                    Welcome back!
+                    Welcome to NIRNAI!
                   </h4>
                   <p className="text-xs text-slate-500">
                     Logged in successfully as <strong>{role === 'advocate' ? 'Advocate' : 'Client'}</strong>. Redirecting...

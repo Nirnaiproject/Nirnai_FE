@@ -1,5 +1,7 @@
+
 import React from 'react';
-import { Scale, CheckCircle2 } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
+
 import SearchCard from '../components/SearchCard';
 import ValueProps from '../components/ValueProps';
 import PopularServices from '../components/PopularServices';
@@ -9,15 +11,19 @@ import LegalKnowledgeSection from '../components/LegalKnowledgeSection';
 import TestimonialsSection from '../components/TestimonialsSection';
 import FaqSection from '../components/FaqSection';
 
-export default function HomePage({ onBookConsultation, onOpenJoinAdvocate }) {
+export default function HomePage({
+  onBookConsultation,
+  onOpenJoinAdvocate
+}) {
   return (
     <div className="min-h-screen bg-[#F7F4EE]">
-      
-      {/* Full-bleed hero, same pattern as GatedPlus: photo fills the fold, search sits on it */}
+
+      {/* HERO SECTION */}
       <section className="relative min-h-[92vh] overflow-hidden">
+
         <img
           src="/hero-bg.png"
-          alt="Lady Justice, legal books, and a gavel in a law library"
+          alt="Lady Justice, legal books and a gavel in a law library"
           width="1365"
           height="768"
           fetchPriority="high"
@@ -25,10 +31,19 @@ export default function HomePage({ onBookConsultation, onOpenJoinAdvocate }) {
           className="absolute inset-0 h-full w-full object-cover object-[center_42%]"
         />
 
-        <div className="relative z-10 mx-auto flex min-h-[92vh] max-w-7xl flex-col justify-end px-4 pb-10 pt-28 sm:px-6 lg:px-8 lg:pb-14">
-          <div className="mb-8 max-w-3xl space-y-5">
-            <div className="rise-in inline-flex flex-wrap items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur-md">
-              <span className="h-2 w-2 animate-pulse rounded-full bg-amber-400"></span>
+        {/* Background overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#101F2C]/90 via-[#101F2C]/65 to-[#101F2C]/15" />
+
+        <div className="absolute inset-0 bg-gradient-to-t from-[#101F2C]/50 via-transparent to-transparent" />
+
+        {/* HERO CONTENT */}
+        <div className="relative z-10 mx-auto flex min-h-[92vh] max-w-7xl flex-col justify-center px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+
+          <div className="mb-10 max-w-3xl space-y-6">
+
+            {/* Legal categories */}
+            <div className="rise-in inline-flex flex-wrap items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold text-white backdrop-blur-md sm:text-sm">
+              <span className="h-2 w-2 animate-pulse rounded-full bg-amber-400" />
               <span className="text-amber-200">Civil</span>
               <span className="text-white/40">•</span>
               <span className="text-teal-200">Criminal</span>
@@ -36,109 +51,127 @@ export default function HomePage({ onBookConsultation, onOpenJoinAdvocate }) {
               <span className="text-sky-200">Constitutional & Tribunals</span>
             </div>
 
-            <h1 className="rise-in rise-d1 font-serif text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[58px]">
-              Find the right legal direction with{' '}
-              <span className="bg-gradient-to-r from-amber-300 via-amber-200 to-teal-200 bg-clip-text text-transparent">
+            {/* Main heading */}
+            <h1 className="rise-in rise-d1 max-w-3xl font-serif text-4xl font-bold leading-[1.12] tracking-tight text-white sm:text-5xl lg:text-[62px]">
+              Find the Right Legal Direction with{' '}
+              <span className="bg-gradient-to-r from-amber-300 via-amber-200 to-[#F5D58B] bg-clip-text text-transparent">
                 NIRNAI.
               </span>
             </h1>
 
-            <p className="rise-in rise-d2 max-w-xl text-base leading-relaxed text-slate-200 sm:text-lg">
-              Legal services. Trusted connections. Clear information. Take your first step towards understanding your legal options.
+            {/* Description */}
+            <p className="rise-in rise-d2 max-w-2xl text-base leading-relaxed text-slate-200 sm:text-lg lg:text-xl">
+              Discover legal services, connect with suitable advocates
+              and take informed steps towards resolving your legal concerns.
             </p>
 
+            {/* Trust information */}
             <div className="rise-in rise-d3 flex flex-wrap items-center gap-3 text-xs font-medium text-slate-100 sm:text-sm">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/20 px-3 py-1 ring-1 ring-emerald-300/30">
+
+              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-300/30 bg-emerald-500/15 px-3 py-2">
                 <CheckCircle2 className="h-4 w-4 text-emerald-300" />
-                State Bar enrolled
+                Advocate Credentials
               </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-500/20 px-3 py-1 ring-1 ring-amber-300/30">
+
+              <span className="inline-flex items-center gap-2 rounded-full border border-amber-300/30 bg-amber-500/15 px-3 py-2">
                 <CheckCircle2 className="h-4 w-4 text-amber-300" />
-                Transparent fixed fees
+                Clear Consultation Details
               </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-sky-500/20 px-3 py-1 ring-1 ring-sky-300/30">
+
+              <span className="inline-flex items-center gap-2 rounded-full border border-sky-300/30 bg-sky-500/15 px-3 py-2">
                 <CheckCircle2 className="h-4 w-4 text-sky-300" />
-                Confidential consultations
+                Confidential Consultations
               </span>
+
             </div>
           </div>
 
-          <div className="float-y pointer-events-none absolute right-8 top-28 hidden w-56 rounded-2xl border border-white/20 bg-white/15 p-4 text-white shadow-2xl backdrop-blur-md lg:block">
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-400 text-slate-950">
-                <Scale className="h-5 w-5" />
-              </div>
-              <div>
-                <div className="text-sm font-bold">1,800+ verified</div>
-                <div className="text-[11px] text-slate-200">Practicing advocates</div>
-              </div>
-            </div>
-          </div>
-
-          <div id="search-section" className="rise-in rise-d4 scroll-mt-24">
+          {/* SEARCH SECTION */}
+          <div
+            id="search-section"
+            className="rise-in rise-d4 w-full scroll-mt-24"
+          >
             <SearchCard
               initialCategory="Civil cases"
               initialIssue="Money Recovery & Summary Suits"
               initialCaseType="Order 37 CPC Summary Suit for Debt Recovery"
               initialCity="Hyderabad"
               initialLocality="Madhapur"
-              allowThemeToggle={true}
+              allowThemeToggle={false}
             />
           </div>
+
         </div>
       </section>
 
-      {/* VALUE PROPOSITIONS BAR */}
+      {/* VALUE PROPOSITIONS */}
       <ValueProps />
 
-      {/* POPULAR CIVIL SERVICES (Reference Image 3) */}
+      {/* POPULAR LEGAL SERVICES */}
       <PopularServices />
 
+      {/* FEATURED ADVOCATES */}
       <div className="defer-paint">
-      <FeaturedAdvocates onBookConsultation={onBookConsultation} limit={4} />
+        <FeaturedAdvocates
+          onBookConsultation={onBookConsultation}
+          limit={4}
+        />
       </div>
 
+      {/* HOW NIRNAI WORKS */}
       <div className="defer-paint">
-      <HowItWorks onOpenJoinAdvocate={onOpenJoinAdvocate} />
+        <HowItWorks
+          onOpenJoinAdvocate={onOpenJoinAdvocate}
+        />
       </div>
 
+      {/* LEGAL KNOWLEDGE */}
       <div className="defer-paint">
-      <LegalKnowledgeSection />
+        <LegalKnowledgeSection />
       </div>
 
+      {/* TESTIMONIALS */}
       <div className="defer-paint">
-      <TestimonialsSection />
+        <TestimonialsSection />
       </div>
 
+      {/* FAQ */}
       <div className="defer-paint">
-      <FaqSection />
+        <FaqSection />
       </div>
 
-      {/* CTA BANNER */}
-      <section className="relative overflow-hidden bg-gradient-to-r from-teal-800 via-emerald-900 to-slate-950 py-14 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
-          <div className="space-y-2 max-w-2xl">
-            <h3 className="text-2xl md:text-3xl font-bold font-serif text-amber-300">
-              Need immediate advice on a property, contract, or civil issue?
+      {/* FINAL CTA */}
+      <section className="relative overflow-hidden bg-gradient-to-r from-[#17364D] via-[#102C40] to-[#091B2B] py-14 text-white sm:py-16">
+
+        <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center justify-between gap-8 px-4 text-center sm:px-6 md:flex-row md:text-left lg:px-8">
+
+          <div className="max-w-2xl space-y-3">
+            <h3 className="font-serif text-2xl font-bold text-amber-300 md:text-3xl">
+              Need Help With a Legal Concern?
             </h3>
-            <p className="text-sm text-slate-300">
-              Book a 30-minute confidential consultation with a verified High Court or Civil Court counsel today.
+
+            <p className="text-sm leading-relaxed text-slate-300 sm:text-base">
+              Explore legal services, find suitable advocates and take
+              the next step towards understanding your legal options.
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-3 flex-shrink-0">
+          <div className="flex flex-shrink-0 flex-col items-center gap-3 sm:flex-row">
+
             <a
               href="#search-section"
-              className="px-6 py-3.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded-xl text-sm transition-all shadow-lg active:scale-95"
+              className="rounded-xl bg-amber-400 px-6 py-3.5 text-sm font-bold text-[#102C40] shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-amber-300 active:scale-95"
             >
-              Search Advocates
+              Find an Advocate
             </a>
+
             <button
               onClick={() => onOpenJoinAdvocate?.()}
-              className="px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl text-sm border border-white/20 transition-all"
+              className="rounded-xl border border-white/25 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-white/20 active:scale-95"
             >
               Join as Advocate
             </button>
+
           </div>
         </div>
       </section>

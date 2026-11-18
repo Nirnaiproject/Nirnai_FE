@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, useLocation, useNavigate } from 'react-ro
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ConsultationModal from './components/ConsultationModal';
+import { ThemeProvider } from './context/ThemeContext';
 
 const HomePage = lazy(() => import('./pages/HomePage'));
 const AdvocatesDirectoryPage = lazy(() => import('./pages/AdvocatesDirectoryPage'));
@@ -37,7 +38,7 @@ function AppLayout({ children }) {
   const isAuthPage = location.pathname === '/login' || location.pathname === '/register';
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#FDFEFE] text-slate-800 font-sans selection:bg-amber-200 selection:text-slate-900">
+    <div className="flex flex-col min-h-screen bg-[#FAF7F0] dark:bg-[#07111E] text-slate-800 dark:text-slate-100 font-sans selection:bg-amber-200 selection:text-slate-900 transition-colors duration-300">
       {!isAuthPage && <Navbar />}
 
       <main className="flex-1">
